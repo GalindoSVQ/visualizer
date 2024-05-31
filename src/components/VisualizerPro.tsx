@@ -6,7 +6,7 @@ import propertiesDataJson from "@/vtk-grid/Simgrid_scalar.json";
 // import simgrid8xIJonly_polysJson from "@/vtk-grid/Simgrid8xIJonly_polys.json";
 // import simgrid8xIJonly_scalarJson from "@/vtk-grid/Simgrid8xIJonly_scalar.json";
 
-export function Visualizer() {
+export function VisualizerPro() {
   return (
     <SubsurfaceViewer
       bounds={[456150, 5925800, 467400, 5939500]}

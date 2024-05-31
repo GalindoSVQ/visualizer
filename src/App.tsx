@@ -3,7 +3,7 @@ import {
   ResizablePanel,
   ResizablePanelGroup,
 } from "@/components/ui/resizable";
-import { Visualizer } from "@/components/Visualizer";
+import { VisualizerPro } from "@/components/VisualizerPro";
 import { Options } from "@/components/Options";
 import { Charts } from "@/components/Charts";
 
@@ -76,7 +76,7 @@ function App() {
         <ResizablePanel defaultSize={80}>
           <ResizablePanelGroup direction="vertical">
             <ResizablePanel className="relative m-2" defaultSize={80}>
-              <Visualizer />
+              <VisualizerPro />
             </ResizablePanel>
             <ResizableHandle />
             <ResizablePanel defaultSize={20}>
