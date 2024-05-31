@@ -2,6 +2,9 @@ import SubsurfaceViewer from "@webviz/subsurface-viewer/dist/SubsurfaceViewer";
 import pointsDataJson from "@/vtk-grid/Simgrid_points.json";
 import polysDataJson from "@/vtk-grid/Simgrid_polys.json";
 import propertiesDataJson from "@/vtk-grid/Simgrid_scalar.json";
+// import simgrid8xIJonly_pointsJson from "@/vtk-grid/Simgrid8xIJonly_points.json";
+// import simgrid8xIJonly_polysJson from "@/vtk-grid/Simgrid8xIJonly_polys.json";
+// import simgrid8xIJonly_scalarJson from "@/vtk-grid/Simgrid8xIJonly_scalar.json";
 
 export function Visualizer() {
   return (
