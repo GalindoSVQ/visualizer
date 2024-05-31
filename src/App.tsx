@@ -3,29 +3,44 @@ import {
   ResizablePanel,
   ResizablePanelGroup,
 } from "@/components/ui/resizable";
-import { Visualizer } from "./components/visualizer";
-import { Options } from "./components/Options";
-import { Charts } from "./components/Charts";
+import { Visualizer } from "@/components/Visualizer";
+import { Options } from "@/components/Options";
+import { Charts } from "@/components/Charts";
 
 const defaultOptions = [
   {
-    title: "Cells",
+    title: "Wells",
     Options: [
-      { label: "Cell 1" },
-      { label: "Cell 2" },
-      { label: "Cell 3" },
-      { label: "Cell 4" },
-      { label: "Cell 5" },
+      { label: "Prod 1" },
+      { label: "Prod 2" },
+      { label: "Prod 3" },
+      { label: "Prod 4" },
+      { label: "Prod 5" },
+      { label: "Prod 6" },
+      { label: "Prod 7" },
+      { label: "Prod 8" },
+      { label: "Prod 9" },
+      { label: "Prod 10" },
+      { label: "Prod 11" },
+      { label: "Prod 12" },
+      { label: "Prod 13" },
+      { label: "Prod 14" },
+      { label: "Prod 15" },
+      { label: "Prod 16" },
+      { label: "Prod 17" },
+      { label: "Prod 18" },
+      { label: "Prod 19" },
+      { label: "Prod 20" },
     ],
   },
   {
     title: "Properties",
     Options: [
-      { label: "Property 1" },
-      { label: "Property 2" },
-      { label: "Property 3" },
-      { label: "Property 4" },
-      { label: "Property 5" },
+      { label: "Poro" },
+      { label: "PermX" },
+      { label: "PermY" },
+      { label: "PermZ" },
+      { label: "NTG" },
     ],
   },
   {
@@ -66,9 +81,9 @@ function App() {
             <ResizableHandle />
             <ResizablePanel defaultSize={20}>
               <div className="flex h-full items-center justify-evenly m-4">
-                <Charts />
-                <Charts />
-                <Charts />
+                <Charts title={"FOPR"} />
+                <Charts title={"FWPR"} />
+                <Charts title={"GPR"} />
               </div>
             </ResizablePanel>
           </ResizablePanelGroup>
