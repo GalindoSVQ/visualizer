@@ -32,18 +32,19 @@ const options = {
 
 const labels = ["1", "2", "3", "4", "5", "6", "7"];
 
-const data = {
-  labels,
-  datasets: [
-    {
-      label: "Dataset 1",
-      data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
-      borderColor: "rgba(36, 18, 216, 0.62)",
-      backgroundColor: "rgba(36, 18, 216, 0.2)",
-    },
-  ],
-};
-
-export function Charts() {
+export function Charts({ title }: { title: string }) {
+  const data = {
+    labels,
+    datasets: [
+      {
+        label: title,
+        data: labels.map(() =>
+          faker.datatype.number({ min: -1000, max: 1000 })
+        ),
+        borderColor: "rgba(36, 18, 216, 0.62)",
+        backgroundColor: "rgba(36, 18, 216, 0.2)",
+      },
+    ],
+  };
   return <Line options={options} data={data} />;
 }
