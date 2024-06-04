@@ -29,11 +29,11 @@ export function VisualizerPro() {
           colorMapName: "Rainbow",
           gridLines: true,
           id: "Grid3DLayer",
-          material: true,
+          material: false,
           // pickable: true,
+          // verticalScale: 50,
           pointsData: grid_points,
           polysData: grid_polys,
-          // verticalScale: 20,
           propertiesData: grid_scalar,
         },
         {
