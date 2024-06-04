@@ -6,21 +6,23 @@ export function VisualizerPro() {
   const [polysData, setPolysData] = useState([]);
   const [propertiesData, setPropertiesData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [volveWells, setVolveWells] = useState([]);
   const [error, setError] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const resPointData = await fetch("/data/rubiales/grid_points.json");
+        const resPointData = await fetch("/data/grid_points.json");
         const pointData = await resPointData.json();
 
-        const polysData = await fetch("/data/rubiales/grid_polys.json");
+        const polysData = await fetch("/data/grid_polys.json");
         const polys = await polysData.json();
 
-        const resPropertiesData = await fetch(
-          "/data/rubiales/grid_scalar.json"
-        );
+        const resPropertiesData = await fetch("/data/grid_scalar.json");
         const propertiesData = await resPropertiesData.json();
+
+        const resVolveWells = await fetch("/data/volve_wells-demo.json");
+        const volveWells = await resVolveWells.json();
 
         console.log("polys", polys[0]);
         console.log("pointData", pointData[0]);
@@ -29,6 +31,7 @@ export function VisualizerPro() {
         setPointsData(pointData);
         setPolysData(polys);
         setPropertiesData(propertiesData);
+        setVolveWells(volveWells);
       } catch (error) {
         setError(true);
       } finally {
@@ -49,8 +52,8 @@ export function VisualizerPro() {
   return (
     <SubsurfaceViewer
       bounds={[
-        3095340.0209960938, 2946459.51171875, 3196225.84765625,
-        3034221.979003906,
+        516041.7200975307, 6178162.917538266, 529933.9489226094,
+        6184617.11714477,
       ]}
       id="grid-3d"
       layers={[
@@ -58,8 +61,8 @@ export function VisualizerPro() {
           "@@type": "AxesLayer",
           ZIncreasingDownwards: false,
           bounds: [
-            3095340.0209960938, 2946459.51171875, -2615.7132873535156,
-            3196225.84765625, 3034221.979003906, -1758.6568603515625,
+            516041.7200975307, 6178162.917538266, -2447.356262207031,
+            529933.9489226094, 6184617.11714477, -1955.6937561035156,
           ],
           id: "axes-layer2",
         },
@@ -76,16 +79,16 @@ export function VisualizerPro() {
           polysData,
           propertiesData,
         },
-        // {
-        //   "@@type": "WellsLayer",
-        //   ZIncreasingDownwards: false,
-        //   data: "@@#resources.wellsData",
-        //   id: "volve-wells",
-        // },
+        {
+          "@@type": "WellsLayer",
+          ZIncreasingDownwards: false,
+          data: "@@#resources.wellsData",
+          id: "volve-wells",
+        },
       ]}
-      // resources={{
-      //   wellsData: volveWells,
-      // }}
+      resources={{
+        wellsData: volveWells,
+      }}
       // verticalScale={3}
       triggerHome={0}
       views={{
@@ -93,7 +96,7 @@ export function VisualizerPro() {
         viewports: [
           {
             id: "view_1",
-            show3D: false,
+            show3D: true,
           },
         ],
       }}
