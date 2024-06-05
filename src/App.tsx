@@ -37,8 +37,11 @@ function App() {
   return (
     <div className="flex flex-col flex-grow">
       <ResizablePanelGroup direction="horizontal">
-        <ResizablePanel defaultSize={20} className="p-2">
-          <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl mb-6">
+        <ResizablePanel
+          defaultSize={20}
+          className="p-2 hidden md:inline-flex flex-col bg-gray-50 "
+        >
+          <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl mb-6">
             Proteus Visualizer
           </h1>
 
@@ -51,13 +54,8 @@ function App() {
           ))}
         </ResizablePanel>
         <ResizableHandle />
-        <ResizablePanel defaultSize={80}>
-          <ResizablePanelGroup direction="vertical">
-            <ResizablePanel className="relative mx-8">
-              <VisualizerPro />
-            </ResizablePanel>
-            <ResizableHandle />
-          </ResizablePanelGroup>
+        <ResizablePanel defaultSize={80} className="relative mx-8">
+          <VisualizerPro />
         </ResizablePanel>
       </ResizablePanelGroup>
     </div>

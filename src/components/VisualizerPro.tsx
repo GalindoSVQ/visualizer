@@ -1,4 +1,4 @@
-import SubsurfaceViewer from "@webviz/subsurface-viewer/dist/SubsurfaceViewer";
+import SubsurfaceViewer from "@/lib/subsurface-viewer/dist/SubsurfaceViewer";
 import { useEffect, useState } from "react";
 
 export function VisualizerPro() {
